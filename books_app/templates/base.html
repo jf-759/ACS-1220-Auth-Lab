@@ -29,6 +29,12 @@
                 <p>{{ message }}</p>
             {% endfor %}
 
+            {% if current_user.is_authenticated %}
+            <!-- stuff you only want to show to logged-in users -->
+            {% else %}
+            <!-- stuff you only want to show to logged-out users -->
+            {% endif %}
+
             {% block content %}{% endblock %}
         </div>
     </body>
